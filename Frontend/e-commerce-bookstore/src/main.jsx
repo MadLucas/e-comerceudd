@@ -2,9 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter } from 'react-router-dom'
 import ProductProvider from './context/products/ProductProvider.jsx'
 import UserProvider from './context/user/UserProvider.jsx'
+import CartProvider from './context/cart/CartProvider.jsx'
+
 
 // import UserProvider from './context/user/UserProvider.jsx'
 
@@ -13,7 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <UserProvider>
         <ProductProvider>
-          <App />
+          <CartProvider>
+            <App/>
+          </CartProvider>
         </ProductProvider>
       </UserProvider>
     </BrowserRouter>
