@@ -4,15 +4,14 @@ import ProductContext from "../../context/products/ProductContext";
 import CardProducts from "../../components/CardProducts/CardProducts";
 
 const Catalogo = () => {
-
-  const { getProducts, products } = useContext(ProductContext)
+  const { getProducts, products } = useContext(ProductContext);
 
   useEffect(() => {
     const axiosProducts = async () => {
-      await getProducts()
-    }
-    axiosProducts()
-  }, [])
+      await getProducts();
+    };
+    axiosProducts();
+  }, []);
 
   return (
     <div>
@@ -26,9 +25,8 @@ const Catalogo = () => {
           </div>
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Catalogo
+export default Catalogo;
