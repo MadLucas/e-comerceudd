@@ -34,7 +34,7 @@ const ProductProvider = ({ children }) => {
     const getProductById = async (id) => {
         try {
             const response = await axiosClient.get(`/products/${id}`);
-            const productInfo = response.data.product;
+            const productInfo = response.data.info;
 
             dispatch({
                 type: "GET_PRODUCT",

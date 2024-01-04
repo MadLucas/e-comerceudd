@@ -14,20 +14,20 @@ const Product = () => {
 
   const { name, stock, price, image, sku } = product[0];
 
-  function agregarPunto(inputString) {
-    // Verificar si la longitud del string es al menos 2
-    if (inputString.length >= 2) {
-      // Obtener los dos primeros caracteres
-      const dosPrimerosCaracteres = inputString.slice(0, 2);
+  // function agregarPunto(inputString) {
+  //   // Verificar si la longitud del string es al menos 2
+  //   if (inputString.length >= 2) {
+  //     // Obtener los dos primeros caracteres
+  //     const dosPrimerosCaracteres = inputString.slice(0, 2);
   
-      // Verificar si los dos primeros caracteres no son un punto
-      if (dosPrimerosCaracteres !== '..') {
-        // Insertar un punto después de los dos primeros caracteres
-        const resultado = inputString.slice(0, 2) + '.' + inputString.slice(2);
-        return resultado;
-      }
-    }
-  }
+  //     // Verificar si los dos primeros caracteres no son un punto
+  //     if (dosPrimerosCaracteres !== '..') {
+  //       // Insertar un punto después de los dos primeros caracteres
+  //       const resultado = inputString.slice(0, 2) + '.' + inputString.slice(2);
+  //       return resultado;
+  //     }
+  //   }
+  // }
 
   useEffect(() => {
     const fetchProduct = async () => {
