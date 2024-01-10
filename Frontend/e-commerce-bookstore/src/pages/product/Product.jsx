@@ -2,7 +2,6 @@ import ProductContext from "../../context/products/ProductContext";
 import { useContext, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import CartContext from "../../context/cart/CartContext";
-
 const Product = () => {
   const { id } = useParams();
 
@@ -14,24 +13,12 @@ const Product = () => {
 
   const { name, stock, price, image, sku } = product[0];
 
-  // function agregarPunto(inputString) {
-  //   // Verificar si la longitud del string es al menos 2
-  //   if (inputString.length >= 2) {
-  //     // Obtener los dos primeros caracteres
-  //     const dosPrimerosCaracteres = inputString.slice(0, 2);
   
-  //     // Verificar si los dos primeros caracteres no son un punto
-  //     if (dosPrimerosCaracteres !== '..') {
-  //       // Insertar un punto después de los dos primeros caracteres
-  //       const resultado = inputString.slice(0, 2) + '.' + inputString.slice(2);
-  //       return resultado;
-  //     }
-  //   }
-  // }
 
   useEffect(() => {
     const fetchProduct = async () => {
       await getProductById(id);
+      
     };
     fetchProduct();
   }, []);
