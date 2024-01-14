@@ -1,9 +1,11 @@
-import React from 'react'
-import "./Home.css"
-import { Container, Row, Col, Button, NavLink } from 'react-bootstrap';
+import React from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import Slide from '../../components/Slider/Slide';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../Home/Home.css'
+import '../Home/Home.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+
 
 
 
@@ -41,14 +43,22 @@ export const Home = () => {
       </section>
 
       <section className='bg-dark'>
-        <h1 className='text-light py-5'>Trending</h1>
+        <h1 className='text-light fw-bold py-3 display-4'>Trending</h1>
         <p className='text-light'>Cautivate con los libros del momento</p>
         <div className='container h-100'>
-          <div className='my-5 p-5'>
+          <div className='my-5 p-3'>
             <Slide/>
           </div>
         </div>
       </section>
+
+    <section>
+      <Container className='d-flex justify-content-center'>
+      <div><i className="bi bi-telephone display-5 mx-5"></i><p>Llamanos!</p></div>
+      <div><i className="bi bi-truck display-5 mx-5"></i><p>Despacho a Domicilio</p></div>
+      <div><i className="bi bi-shop display-5 mx-5"></i><p>Retiro en tienda</p></div>
+      </Container>
+    </section>
     </>
   )
 }
