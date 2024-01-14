@@ -18,7 +18,7 @@ export const Home = () => {
         <Col xs={10} sm={8} lg={6} className="d-flex justify-content-center">
           <img
             src="https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="d-block mx-auto img-fluid"
+            className="d-block mx-auto img-fluid rounded-4"
             alt=""
             width="700"
             height="500"
@@ -33,7 +33,7 @@ export const Home = () => {
             </p>
           </div>
           <div className="d-grid gap-2 d-md-flex justify-content-md-center">
-            <Button variant="dark" size="lg" className="px-4 me-md-2" href="/auth">
+            <Button variant="dark" size="lg" className="px-4 me-md-2 mt-3" href="/auth">
               Signup
             </Button>
           </div>
