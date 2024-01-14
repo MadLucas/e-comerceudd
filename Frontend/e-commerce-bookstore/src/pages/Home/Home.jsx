@@ -1,6 +1,11 @@
 import React from 'react'
 import "./Home.css"
 import { Container, Row, Col, Button, NavLink } from 'react-bootstrap';
+import Slide from '../../components/Slider/Slide';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../Home/Home.css'
+
+
 
 export const Home = () => {
   return (
@@ -34,8 +39,15 @@ export const Home = () => {
       </Row>
     </Container>
       </section>
-      <section>
-        
+
+      <section className='bg-dark'>
+        <h1 className='text-light py-5'>Trending</h1>
+        <p className='text-light'>Cautivate con los libros del momento</p>
+        <div className='container h-100'>
+          <div className='my-5 p-5'>
+            <Slide/>
+          </div>
+        </div>
       </section>
     </>
   )
