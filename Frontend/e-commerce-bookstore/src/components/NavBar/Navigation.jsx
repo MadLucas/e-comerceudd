@@ -22,7 +22,7 @@ const Navigation = () => {
             setUserName(infoUser.name)
         }
         getInfoUser()
-    }, [userName])
+    }, [infoUser.name])
 
     return (
         <>
@@ -33,13 +33,13 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={NavLink} to="/catalogo">Catalogo</Nav.Link>
+                        <Nav.Link as={NavLink} to="/catalogo">Catálogo</Nav.Link>
                         <Nav.Link as={NavLink} to="/checkout">Checkout</Nav.Link>
-                        <Nav.Link as={NavLink} to="/products/:id">Producto</Nav.Link>
+                        
                         {authStatus &&
                             <NavDropdown title={userName}>
-                                <NavDropdown.Item as={NavLink} to="/users">My Profile</NavDropdown.Item>
-                                <NavDropdown.Item as={NavLink} to="/user/options">Options</NavDropdown.Item> //!donde saco esto!!
+                                <NavDropdown.Item as={NavLink} to="/perfil">My Profile</NavDropdown.Item>
+                                {/* <NavDropdown.Item as={NavLink} to="/user/options">Options</NavDropdown.Item> */}
                             </NavDropdown>}
                     </Nav>
                     <Nav>

@@ -8,20 +8,20 @@ const Product = () => {
   const { getProductById, product } = useContext(ProductContext);
   const { addItemToCart, cartCount } = useContext(CartContext)
   console.log(addItemToCart, cartCount)
-    //explicar
-  const handleAdd = () => { if(cartCount < stock) addItemToCart(product[0])}
+  //explicar
+  const handleAdd = () => { if (cartCount < stock) addItemToCart(product[0]) }
 
   const { name, stock, price, image, sku } = product[0];
 
-  
+
 
   useEffect(() => {
     const fetchProduct = async () => {
       await getProductById(id);
-      
+
     };
     fetchProduct();
-  }, []);
+  }, [id]);
 
   return (
     <div>
@@ -37,7 +37,7 @@ const Product = () => {
                   <li>
                     <div className="flex items-center">
                       <Link
-                        to="/products"
+                        to="/catalogo"
                         className="mr-2 text-sm font-medium text-gray-900"
                       >
                         Catálogo
@@ -72,14 +72,14 @@ const Product = () => {
                   <img
                     src={image}
                     alt="Two each of gray, white, and black shirts laying flat."
-                    className="w-full h-80 object-center object-cover"
+                    className="w-full h-full object-center object-cover"
                   />
                 </div>
                 <div className="w-full rounded-lg overflow-hidden lg:block">
                 </div>
                 <div className="w-full rounded-lg overflow-hidden lg:block">
-                  
-                   <h2 className="text-3xl font-extrabold text-gray-400">
+
+                  <h2 className="text-3xl font-extrabold text-gray-400">
                     Características
                   </h2>
 
@@ -94,16 +94,16 @@ const Product = () => {
                     <b>Stock</b>: {stock}
                   </p>
 
-                 {stock === 0 ? (
+                  {stock === 0 ? (
                     <h4 className="text-red-800 no-underline">Sin Stock</h4>
                   ) : (
-                      <button
-                        type="button"
-                        className="mt-10 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        onClick={handleAdd} 
-                      >
-                        Añadir
-                      </button>
+                    <button
+                      type="button"
+                      className="mt-10 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      onClick={handleAdd}
+                    >
+                      Añadir
+                    </button>
                   )}
                 </div>
               </div>
@@ -115,14 +115,7 @@ const Product = () => {
                   </h1>
                 </div>
 
-                <div className="mt-4 lg:mt-0 lg:row-span-3 rounded-lg overflow-hidden">
-                  <p>Publicidad</p>
-                  <img
-                    src="https://cdn.goconqr.com/uploads/media/image/15582944/desktop_4bab4107-7161-49f8-8ae4-ae602ab64145.jpg"
-                    alt="Two each of gray, white, and black shirts laying flat."
-                    className="w-full h-80 object-center object-cover"
-                  />
-                </div>
+                
 
                 <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
                   <div>

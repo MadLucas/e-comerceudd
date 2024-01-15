@@ -6,14 +6,14 @@ const productReducer = (state, action) => {
             return {
                 ...state,
                 products: payload,
-                product: [{
-                    id: "",
-                    name: "",
-                    sku: "",
-                    price: 0,
-                    image: "",
-                    stock: ""
-                }]
+                // product: [{
+                //     id: "",
+                //     name: "",
+                //     sku: "",
+                //     price: 0,
+                //     image: "",
+                //     stock: ""
+                // }]
             }
         case "GET_PRODUCT":
             return {

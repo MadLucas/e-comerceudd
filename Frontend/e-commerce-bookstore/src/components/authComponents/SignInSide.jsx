@@ -1,42 +1,43 @@
-import {Avatar, Button, CssBaseline, TextField, Paper, Box, Grid, Typography, createTheme, ThemeProvider } from "@mui/material";
+import { Avatar, Button, CssBaseline, TextField, Paper, Box, Grid, Typography, createTheme, ThemeProvider } from "@mui/material";
 import { useContext, useState } from "react";
 import UserContext from "../../context/user/UserContext";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 const theme = createTheme();
 
 export default function SignInSide() {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const [signUp, setSignUp] = useState(false)
+  const [signUp, setSignUp] = useState(false)
 
 
-    const { loginUser, registerUser } = useContext(UserContext)
+  const { loginUser, registerUser } = useContext(UserContext)
 
-    const initialValues = {
-        name: "",
-        email: "",
-        password: ""
-    }
+  const initialValues = {
+    name: "",
+    email: "",
+    password: "",
+    age:""
+  }
 
-    console.log(`Este es el estado de signUp: ${signUp}`)
+  console.log(`Este es el estado de signUp: ${signUp}`)
 
-    const [user, setUser] = useState(initialValues)
+  const [user, setUser] = useState(initialValues)
 
-   const handleChange = (e) => {
+  const handleChange = (e) => {
     setUser((prevState) => ({
-        ...prevState,
-        [e.target.name]: e.target.value
+      ...prevState,
+      [e.target.name]: e.target.value
     }))
-   }
+  }
 
-   console.log(user)
+  console.log(user)
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(signUp){
+    if (signUp) {
       registerUser(user)
     } else {
       loginUser(user)
@@ -45,7 +46,7 @@ export default function SignInSide() {
     setUser(initialValues)
 
     navigate("/")
-    
+
   };
 
   const changeMode = () => {
@@ -53,7 +54,7 @@ export default function SignInSide() {
     setUser(initialValues)
   }
 
-  
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -65,7 +66,7 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundImage: 'url(https://source.unsplash.com/random/?books)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -84,10 +85,10 @@ export default function SignInSide() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-             
+
             </Avatar>
             <Typography component="h1" variant="h5">
-              { signUp ?  "Sign up" : "Sign in"}
+              {signUp ? "Sign up" : "Login"}
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               {signUp && (
@@ -101,7 +102,7 @@ export default function SignInSide() {
                   type="text"
                   placeholder="Nombre"
                   name="name"
-                  label="Name"
+                  label="Nombre"
                   value={user.name}
                 />
               )}
@@ -110,7 +111,7 @@ export default function SignInSide() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -129,18 +130,33 @@ export default function SignInSide() {
                 onChange={handleChange}
                 value={user.password}
               />
+             {signUp && (
+                <TextField
+                  margin="normal"
+                  required
+                  id="age"
+                  fullWidth
+                  autoFocus
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Edad"
+                  name="edad"
+                  label="Edad"
+                  value={user.age}
+                />
+              )}
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                {signUp ? "Sign Up" : "Sign In"}
+                {signUp ? "Sign Up" : "Login"}
               </Button>
               <Grid container>
                 <Grid item>
                   <Button onClick={changeMode}>
-                    {signUp ? "Already have an account? Sign In" : "Don't have an account? Sign Up"}
+                    {signUp ? "Ya tienes una cuenta? Login" : "No tienes una cuenta con nosotros? Sign Up"}
                   </Button>
                 </Grid>
               </Grid>
