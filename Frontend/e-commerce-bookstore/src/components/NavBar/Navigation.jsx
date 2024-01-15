@@ -5,6 +5,8 @@ import UserContext from "../../context/user/UserContext";
 import CartIcon from "../cartComponents/cartIcon/CartIcon";
 import CartDropdown from "../cartComponents/cartDropdown/CartDropdown";
 import CartContext from "../../context/cart/CartContext";
+import { FaBookReader } from "react-icons/fa";
+
 
 
 
@@ -28,7 +30,7 @@ const Navigation = () => {
         <>
             <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark">
                 <Navbar.Brand as={NavLink} to='/' className="ms-3">
-                    Home
+                <FaBookReader />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
