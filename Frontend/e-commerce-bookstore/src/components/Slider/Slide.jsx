@@ -26,13 +26,15 @@ const Slide = () => {
     };
 
     return (
-        <Carousel responsive={responsive} className="">
+        <Carousel responsive={responsive}>
             {first10Products.map((product) => (
-                <div key={product._id} className="card my-3 mx-2">
-                    <img className="product--image" src={product.image} alt={product.name} />
+                <div key={product._id} className="card my-3 mx-2 py-2">
+                    <img className="m-auto" src={product.image} alt={product.name} width={"250"}/>
+                    <div className="py-3">
                     <h2>{product.name}</h2>
                     <p>${product.price}</p>
-                    <Button variant="dark" size="lg" className="bg-dark px-4 me-md-2" >Add To cart</Button>
+                    </div>
+                    <Button variant="dark" size="lg"  className="bg-dark px-4 me-md-2" >Add To cart</Button>
                 </div>
             ))}
         </Carousel>
