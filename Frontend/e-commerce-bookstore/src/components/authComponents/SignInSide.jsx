@@ -18,8 +18,11 @@ export default function SignInSide() {
   const initialValues = {
     name: "",
     email: "",
+    phone: "",
+    adress: "",
+    comune: "",
+    region: "",
     password: "",
-    age:""
   }
 
   console.log(`Este es el estado de signUp: ${signUp}`)
@@ -118,6 +121,7 @@ export default function SignInSide() {
                 onChange={handleChange}
                 value={user.email}
               />
+
               <TextField
                 margin="normal"
                 required
@@ -131,19 +135,63 @@ export default function SignInSide() {
                 value={user.password}
               />
              {signUp && (
+                <>
                 <TextField
                   margin="normal"
                   required
-                  id="age"
+                  id="phone"
                   fullWidth
                   autoFocus
                   onChange={handleChange}
                   type="text"
-                  placeholder="Edad"
-                  name="edad"
-                  label="Edad"
-                  value={user.age}
+                  placeholder="912345678"
+                  name="phone"
+                  label="Teléfono"
+                  value={user.phone}
                 />
+                <TextField
+                margin="normal"
+                required
+                id="adress"
+                fullWidth
+                autoFocus
+                onChange={handleChange}
+                type="text"
+                placeholder="pje uno 33, depto 30A"
+                name="adress"
+                label="Dirección"
+                value={user.adress}
+                
+              />
+              <TextField
+                margin="normal"
+                required
+                id="comune"
+                fullWidth
+                autoFocus
+                onChange={handleChange}
+                type="text"
+                placeholder="Providencia"
+                name="comune"
+                label="Comuna"
+                value={user.comune}
+                
+              />
+              <TextField
+                margin="normal"
+                required
+                id="region"
+                fullWidth
+                autoFocus
+                onChange={handleChange}
+                type="text"
+                placeholder="Región metropolitana de Santiago"
+                name="region"
+                label="Región"
+                value={user.region}
+                
+              />
+              </>
               )}
               <Button
                 type="submit"

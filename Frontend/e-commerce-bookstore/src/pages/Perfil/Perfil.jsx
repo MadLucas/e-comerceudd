@@ -5,7 +5,7 @@ import { Card, CardActions, CardContent, CardMedia, Button, Typography, Box, Con
 const Profile = () => {
 
     const {infoUser, userEdit} = useContext(UserContext)
-
+    
     const {name, email, age} = infoUser
 
     const [open, setOpen] = useState(false);
