@@ -70,7 +70,7 @@ const UserProvider = ({children}) => {
 
     try {
       const infoUserVerify = await axiosClient.get("/verifyUser")
-      
+      console.log(infoUserVerify)
       dispatch({
         type: "INFO_USER",
         payload: infoUserVerify.data.info

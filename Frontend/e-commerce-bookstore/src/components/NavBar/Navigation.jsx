@@ -18,6 +18,7 @@ const Navigation = () => {
     const [userName, setUserName] = useState("No conectado")
 
     console.log(infoUser)
+
     useEffect(() => {
         const getInfoUser = async () => {
             await verifyToken()
@@ -30,19 +31,22 @@ const Navigation = () => {
         <>
             <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark">
                 <Navbar.Brand as={NavLink} to='/' className="ms-3">
-                <FaBookReader />
+                    <FaBookReader />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={NavLink} to="/catalogo">Catálogo</Nav.Link>
-                        <Nav.Link as={NavLink} to="/checkout">Checkout</Nav.Link>
-                        
+                        {/* <Nav.Link as={NavLink} to="/checkout">Checkout</Nav.Link> */}
+
                         {authStatus &&
-                            <NavDropdown title={userName}>
-                                <NavDropdown.Item as={NavLink} to="/perfil">My Profile</NavDropdown.Item>
-                                {/* <NavDropdown.Item as={NavLink} to="/user/options">Options</NavDropdown.Item> */}
-                            </NavDropdown>}
+                            <>
+                            
+                                <NavDropdown title={userName}>
+                                    <NavDropdown.Item as={NavLink} to="/perfil">My Profile</NavDropdown.Item>
+                                    {/* <NavDropdown.Item as={NavLink} to="/user/options">Options</NavDropdown.Item> */}
+                                </NavDropdown>
+                            </>}
                     </Nav>
                     <Nav>
                         {authStatus ? <Button onClick={signOut} className="me-3">Logout</Button> : <Nav.Link className="me-3" as={NavLink} to="/auth">Login</Nav.Link>}
