@@ -15,7 +15,7 @@ export const MainRouter = () => {
             <Route path = "/" element={<Layout/>}>
                 <Route path="/" element={<Home />} />
                 <Route path="/checkout" element={<CheckOut />} />
-                <Route path="/perfil" element={<Profile />} />
+                <Route path="/perfil" element={<Perfil />} />
                 <Route path='/products/:id' element={<Product/>} />
                 <Route path="/catalogo" element={<Catalogo />} />
                 <Route path="/*" element={<PageNotFound />} />
