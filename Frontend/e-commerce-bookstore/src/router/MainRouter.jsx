@@ -7,6 +7,7 @@ import Home from '../pages/Home/Home'
 import Auth from '../pages/auth/Auth';
 import Layout from '../components/layout/Layout';
 import Product from '../pages/product/Product';
+import Profile from '../pages/Perfil/Profile';
 
 export const MainRouter = () => {
     return (
@@ -14,7 +15,7 @@ export const MainRouter = () => {
             <Route path = "/" element={<Layout/>}>
                 <Route path="/" element={<Home />} />
                 <Route path="/checkout" element={<CheckOut />} />
-                <Route path="/perfil" element={<Perfil />} />
+                <Route path="/perfil" element={<Profile />} />
                 <Route path='/products/:id' element={<Product/>} />
                 <Route path="/catalogo" element={<Catalogo />} />
                 <Route path="/*" element={<PageNotFound />} />
