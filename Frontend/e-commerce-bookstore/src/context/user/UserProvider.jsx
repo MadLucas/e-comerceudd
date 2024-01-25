@@ -3,6 +3,7 @@ import UserContext from "./UserContext"
 import { useReducer } from "react"
 import userReducer from "./userReducer"
 import { useNavigate } from "react-router-dom"
+import { jwtDecode } from "jwt-decode"
 
 
 const UserProvider = ({children}) => {
@@ -33,6 +34,8 @@ const UserProvider = ({children}) => {
           payload: userOn.token
         })
       }
+
+      decodeToken(userOn.token)
 
     } catch (error) {
       console.log(error)
@@ -71,10 +74,7 @@ const UserProvider = ({children}) => {
     try {
       const infoUserVerify = await axiosClient.get("/verifyUser")
       console.log(infoUserVerify)
-      dispatch({
-        type: "INFO_USER",
-        payload: infoUserVerify.data.info
-      })
+      
 
     } catch (error) {
       console.log(error)
@@ -95,6 +95,15 @@ const UserProvider = ({children}) => {
 
   }
 
+  const decodeToken = (token) => {
+   
+    const tokenDeco = jwtDecode(token)
+    console.log(tokenDeco)
+    dispatch({
+      type: "INFO_USER",
+      payload: tokenDeco
+    })
+  }
   
   return (
     <UserContext.Provider value={{userEdit, loginUser, registerUser,verifyToken,signOut,infoUser: userState.infoUser, authStatus: userState.authStatus}}>{children}</UserContext.Provider>

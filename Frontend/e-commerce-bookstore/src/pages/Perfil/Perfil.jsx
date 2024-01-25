@@ -5,15 +5,19 @@ import { Card, CardActions, CardContent, CardMedia, Button, Typography, Box, Con
 const Profile = () => {
 
     const {infoUser, userEdit} = useContext(UserContext)
+    console.log(infoUser)
     
-    const {name, email, age} = infoUser
+    const {name, email, phone, comune, region, adress} = infoUser
 
     const [open, setOpen] = useState(false);
 
     const [userForm, setUserForm] = useState({
       name: "",
-      age,
-      email
+      email:"",
+      phone:"",
+      comune:"",
+      region:"",
+      adress:""
     })
 
   const handleChange = async(e) => {
@@ -33,7 +37,10 @@ const Profile = () => {
         ...userForm,
         name,
         email,
-        age
+        phone,
+        comune,
+        region,
+        adress
       })
     }
 
@@ -77,6 +84,18 @@ const Profile = () => {
               align="center"
             >
               {`${name}`}
+            </Typography>
+            <Typography variant="h6" color="text.secondary" align="center">
+              {phone}
+            </Typography>
+            <Typography variant="h6" color="text.secondary" align="center">
+              {region}
+            </Typography>
+            <Typography variant="h6" color="text.secondary" align="center">
+              {comune}
+            </Typography>
+            <Typography variant="h6" color="text.secondary" align="center">
+              {adress}
             </Typography>
             <Typography variant="h6" color="text.secondary" align="center">
               {email}
