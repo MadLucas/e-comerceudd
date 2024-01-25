@@ -45,7 +45,19 @@ const Profile = () => {
     setOpen(!open)
   }
 
-
+  const fetchUserData = async () => {
+      try {
+        const response = await fetch("/api/userData"); //ruta en backend xra traer datos de usuario 
+        if (response.ok) {
+          const userData = await response.json();
+          setUserForm(userData);
+        } else {
+          console.error("Error fetching user data");
+        }
+      } catch (error) {
+        console.error("Error fetching user data", error);
+      }
+    };
 
   return (
     <div>
@@ -127,5 +139,7 @@ const Profile = () => {
     </div>
   )
 }
+
+
 
 export default Profile

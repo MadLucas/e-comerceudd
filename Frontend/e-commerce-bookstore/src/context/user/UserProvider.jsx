@@ -90,9 +90,14 @@ const UserProvider = ({children}) => {
     }
   }
 
+  const userEdit = async() => {
+
+
+  }
+
   
   return (
-    <UserContext.Provider value={{loginUser, registerUser,verifyToken,signOut,infoUser: userState.infoUser, authStatus: userState.authStatus}}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{userEdit, loginUser, registerUser,verifyToken,signOut,infoUser: userState.infoUser, authStatus: userState.authStatus}}>{children}</UserContext.Provider>
   )
 }
 
