@@ -134,64 +134,64 @@ export default function SignInSide() {
                 onChange={handleChange}
                 value={user.password}
               />
-             {signUp && (
+              {signUp && (
                 <>
-                <TextField
-                  margin="normal"
-                  required
-                  id="phone"
-                  fullWidth
-                  autoFocus
-                  onChange={handleChange}
-                  type="text"
-                  placeholder="912345678"
-                  name="phone"
-                  label="Teléfono"
-                  value={user.phone}
-                />
-                <TextField
-                margin="normal"
-                required
-                id="adress"
-                fullWidth
-                autoFocus
-                onChange={handleChange}
-                type="text"
-                placeholder="pje uno 33, depto 30A"
-                name="adress"
-                label="Dirección"
-                value={user.adress}
-                
-              />
-              <TextField
-                margin="normal"
-                required
-                id="comune"
-                fullWidth
-                autoFocus
-                onChange={handleChange}
-                type="text"
-                placeholder="Providencia"
-                name="comune"
-                label="Comuna"
-                value={user.comune}
-                
-              />
-              <TextField
-                margin="normal"
-                required
-                id="region"
-                fullWidth
-                autoFocus
-                onChange={handleChange}
-                type="text"
-                placeholder="Región metropolitana de Santiago"
-                name="region"
-                label="Región"
-                value={user.region}
-                
-              />
-              </>
+                  <TextField
+                    margin="normal"
+                    required
+                    id="phone"
+                    fullWidth
+                    autoFocus
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="912345678"
+                    name="phone"
+                    label="Teléfono"
+                    value={user.phone}
+                  />
+                  <TextField
+                    margin="normal"
+                    required
+                    id="adress"
+                    fullWidth
+                    autoFocus
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="pje uno 33, depto 30A"
+                    name="adress"
+                    label="Dirección"
+                    value={user.adress}
+
+                  />
+                  <TextField
+                    margin="normal"
+                    required
+                    id="comune"
+                    fullWidth
+                    autoFocus
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Providencia"
+                    name="comune"
+                    label="Comuna"
+                    value={user.comune}
+
+                  />
+                  <TextField
+                    margin="normal"
+                    required
+                    id="region"
+                    fullWidth
+                    autoFocus
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Región metropolitana de Santiago"
+                    name="region"
+                    label="Región"
+                    value={user.region}
+
+                  />
+                </>
               )}
               <Button
                 type="submit"

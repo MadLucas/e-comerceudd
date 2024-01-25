@@ -7,6 +7,7 @@ import Home from '../pages/Home/Home'
 import Auth from '../pages/auth/Auth';
 import Layout from '../components/layout/Layout';
 import Product from '../pages/product/Product';
+import Profile from '../pages/Perfil/Profile';
 
 export const MainRouter = () => {
     return (
