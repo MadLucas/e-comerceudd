@@ -66,6 +66,10 @@ const Profile = () => {
       }
     };
 
+    const enviar = () => {
+      alert("Enviando")
+    }
+
   return (
     <div>
        <Container sx={{
@@ -151,7 +155,7 @@ const Profile = () => {
                 onChange={handleChange}
                 name="email"
             />
-            <Button type="submit">Send</Button>
+            <Button onClick={enviar}>Send</Button>
           
         </Box>
       </div>

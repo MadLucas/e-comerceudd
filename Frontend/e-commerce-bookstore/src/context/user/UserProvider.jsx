@@ -7,15 +7,26 @@ import { jwtDecode } from "jwt-decode"
 
 
 const UserProvider = ({children}) => {
-
-  const navigate = useNavigate()
+  const funcionInicializadora = () => {
+    const token = localStorage.getItem("token")
+    if (token) {
+      const tokenDeco = jwtDecode(token)
+      const state = {
+        infoUser: {...tokenDeco},
+        authStatus: true 
+      }
+      return state
+    }
+    return initialState
+  }
+    const navigate = useNavigate()
   //initialState
   const initialState = {
     infoUser: [],
     authStatus: false
   }
 
-  const [userState, dispatch] = useReducer(userReducer, initialState)
+  const [userState, dispatch] = useReducer(userReducer, initialState, funcionInicializadora)
 
   //useReducer ---> estados
 

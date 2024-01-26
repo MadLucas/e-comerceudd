@@ -91,7 +91,7 @@ export default function SignInSide() {
 
             </Avatar>
             <Typography component="h1" variant="h5">
-              {signUp ? "Sign up" : "Login"}
+              {signUp ? "Regístrate" : "Inicia sesión"}
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               {signUp && (
@@ -199,12 +199,12 @@ export default function SignInSide() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                {signUp ? "Sign Up" : "Login"}
+                {signUp ? "Regístrate" : "Inicia sesión"}
               </Button>
               <Grid container>
                 <Grid item>
                   <Button onClick={changeMode}>
-                    {signUp ? "Ya tienes una cuenta? Login" : "No tienes una cuenta con nosotros? Sign Up"}
+                    {signUp ? "Ya tienes una cuenta? Inicia sesión" : "No tienes una cuenta con nosotros? Regístrate"}
                   </Button>
                 </Grid>
               </Grid>

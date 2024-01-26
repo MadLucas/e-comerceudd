@@ -6,6 +6,7 @@ import CartIcon from "../cartComponents/cartIcon/CartIcon";
 import CartDropdown from "../cartComponents/cartDropdown/CartDropdown";
 import CartContext from "../../context/cart/CartContext";
 import { FaBookReader } from "react-icons/fa";
+import { Box, Typography } from "@mui/material";
 
 
 
@@ -15,23 +16,29 @@ const Navigation = () => {
 
     const { isCartOpen } = useContext(CartContext)
 
-    const [userName, setUserName] = useState("No conectado")
+
 
     console.log(infoUser)
 
     useEffect(() => {
         const getInfoUser = async () => {
             await verifyToken()
-            setUserName(infoUser.name)
+
         }
         getInfoUser()
-    }, [infoUser.name])
+    }, [infoUser])
 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark">
+            <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark" className="fixed-top">
                 <Navbar.Brand as={NavLink} to='/' className="ms-3">
-                    <FaBookReader />
+                    <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
+
+                        <FaBookReader />
+                        <Typography id="modal-modal-title" variant="h6" component="h2" align="center">
+                            Bookstore
+                        </Typography>
+                    </Box>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -41,15 +48,15 @@ const Navigation = () => {
 
                         {authStatus &&
                             <>
-                            
-                                <NavDropdown title={userName}>
-                                    <NavDropdown.Item as={NavLink} to="/perfil">My Profile</NavDropdown.Item>
+
+                                <NavDropdown title={`${infoUser ? infoUser.name : 'No conectado'}`}>
+                                    <NavDropdown.Item as={NavLink} to="/perfil">Mi Perfil</NavDropdown.Item>
                                     {/* <NavDropdown.Item as={NavLink} to="/user/options">Options</NavDropdown.Item> */}
                                 </NavDropdown>
                             </>}
                     </Nav>
                     <Nav>
-                        {authStatus ? <Button onClick={signOut} className="me-3">Logout</Button> : <Nav.Link className="me-3" as={NavLink} to="/auth">Login</Nav.Link>}
+                        {authStatus ? <Button onClick={signOut} className="me-3">Cerrar sesión</Button> : <Nav.Link className="me-3" as={NavLink} to="/auth">Inicia sesión</Nav.Link>}
                         <CartIcon />
                         {isCartOpen && <CartDropdown />}
                     </Nav>

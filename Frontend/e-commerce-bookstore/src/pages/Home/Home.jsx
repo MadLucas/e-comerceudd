@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Slide from '../../components/Slider/Slide';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,7 +30,7 @@ export const Home = () => {
           </div>
           <div className="d-grid gap-2 d-md-flex justify-content-md-center">
             <Button variant="dark" size="lg" className="px-4 me-md-2 mt-3" href="/auth">
-              Signup
+              Inicia sesión
             </Button>
           </div>
         </Col>
@@ -40,10 +39,10 @@ export const Home = () => {
       </section>
 
       <section className='bg-dark'>
-        <h1 className='text-light fw-bold py-3 display-4'>Trending</h1>
-        <p className='text-light'>Cautivate con los libros del momento</p>
+        <h1 className='text-light fw-bold py-3 display-4'>Tendencias</h1>
+        <p className='text-light'>Déjate cautivar por los libros del momento</p>
         <div className='container h-100'>
-          <div className='my-5 p-3'>
+          <div className='my-3 p-3'>
             <Slide/>
           </div>
         </div>
