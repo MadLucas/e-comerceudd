@@ -32,7 +32,7 @@ export const Home = () => {
           </div>
           <div className="d-grid gap-2 d-md-flex justify-content-md-center">
 
-            <Button variant="dark" size="lg" className="px-4 me-md-2 mt-3" onClick={() => navigate("/auth")}>
+            <Button variant="dark" size="lg" className="px-4 me-md-2 mt-3 bg-dark" onClick={() => navigate("/auth")}>
               Inicia sesión
             </Button>
           </div>

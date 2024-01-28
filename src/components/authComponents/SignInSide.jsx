@@ -38,19 +38,22 @@ export default function SignInSide() {
 
   console.log(user)
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (signUp) {
-      registerUser(user)
-    } else {
-      loginUser(user)
+    try {
+      if (signUp) {
+        await registerUser(user);
+      } else {
+        await loginUser(user);
+      }
+      setUser(initialValues);
+      navigate("/");
+    } catch (error) {
+      console.error("Error durante el registro de usuario", error);
+      // Manejando el error
     }
-
-    setUser(initialValues)
-
-    navigate("/")
-
   };
+  
 
   const changeMode = () => {
     setSignUp(!signUp)
