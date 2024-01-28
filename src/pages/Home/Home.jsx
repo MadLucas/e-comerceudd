@@ -3,9 +3,11 @@ import Slide from '../../components/Slider/Slide';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Home/Home.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { useNavigate } from 'react-router-dom'
 
 
 export const Home = () => {
+  const navigate = useNavigate()
   return (
     <>
     <section>
@@ -29,7 +31,8 @@ export const Home = () => {
             </p>
           </div>
           <div className="d-grid gap-2 d-md-flex justify-content-md-center">
-            <Button variant="dark" size="lg" className="px-4 me-md-2 mt-3" href="/auth">
+
+            <Button variant="dark" size="lg" className="px-4 me-md-2 mt-3" onClick={() => navigate("/auth")}>
               Inicia sesión
             </Button>
           </div>
