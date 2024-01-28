@@ -1,18 +1,14 @@
 # Título del Proyecto
 
-Nombre autoexplicativo del proyecto, con una breve descripción.
+Proyecto 5 e-commerce Bookstore. Es una web de venta online de libros de todo género.
 
 ## Descripción
 
-Una descripción más detallada y técnica del proyecto, incluyendo sus principales características, su propósito y cómo funciona.
-
-## Insignias
-
-Insignias que muestran metadatos como el estado de la compilación, la cobertura de las pruebas, el estado de las dependencias, etc.
+Nuestra web es un e-commerce de venta de libros. En ella se permite al usuario además de realizar sus compras, registrarse y tener un perfil de usuario con sus datos personales.
 
 ## Visuales
 
-Capturas de pantalla, videos o GIFs que demuestran lo que hace el proyecto y cómo usarlo.
+![image](https://github.com/MadLucas/e-comerceudd/assets/123422234/55ec9a19-fa2b-40a0-9205-d6345007bcf3)
 
 ## Empezando 🚀
 
