@@ -1,6 +1,6 @@
 import UserContext from "../../context/user/UserContext";
 import { useContext, useState, useEffect } from "react";
-import { Card, CardActions, CardContent, CardMedia, Button, Typography, Box, Container, Modal, TextField } from "@mui/material";
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Box, Container, TextField } from "@mui/material";
 
 const Profile = () => {
 
@@ -52,19 +52,19 @@ const Profile = () => {
     setOpen(!open)
   }
 
-  const fetchUserData = async () => {
-      try {
-        const response = await fetch("/api/userData"); //ruta en backend xra traer datos de usuario 
-        if (response.ok) {
-          const userData = await response.json();
-          setUserForm(userData);
-        } else {
-          console.error("Error fetching user data");
-        }
-      } catch (error) {
-        console.error("Error fetching user data", error);
-      }
-    };
+  // const fetchUserData = async () => {
+  //     try {
+  //       const response = await fetch("/api/userData"); //ruta en backend xra traer datos de usuario 
+  //       if (response.ok) {
+  //         const userData = await response.json();
+  //         setUserForm(userData);
+  //       } else {
+  //         console.error("Error fetching user data");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching user data", error);
+  //     }
+  //   };
 
     const enviar = () => {
       alert("Enviando")
@@ -87,7 +87,7 @@ const Profile = () => {
               component="div"
               align="center"
             >
-              {`${name}`}
+              {name}
             </Typography>
             <Typography variant="h6" color="text.secondary" align="center">
               {phone}

@@ -66,6 +66,7 @@ const UserProvider = ({children}) => {
           payload: userOn.token
         })
       }
+      decodeToken(userOn.token)
       console.log(userOn.message)
 
     } catch (error) {
