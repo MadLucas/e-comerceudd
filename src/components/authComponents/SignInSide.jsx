@@ -1,4 +1,4 @@
-import { Avatar, Button, CssBaseline, TextField, Paper, Box, Grid, Typography, createTheme, ThemeProvider } from "@mui/material";
+import { Avatar, Button, CssBaseline, TextField, Paper, Box, Grid, Typography, createTheme, ThemeProvider, Autocomplete } from "@mui/material";
 import { useContext, useState } from "react";
 import UserContext from "../../context/user/UserContext";
 import { useNavigate } from "react-router-dom"
@@ -6,11 +6,14 @@ import { useNavigate } from "react-router-dom"
 
 const theme = createTheme();
 
+const regiones = ["Región de Arica y Parinacota", "Región de Tarapacá", "Región de Antofagasta", "Región de Atacama", "Región de Coquimbo", "Región de Valparaíso", "Región Metropolitana", "Región de O’Higgins", "Región del Maule", "Región del Ñuble", "Región del Biobío", "Región de La Araucanía", "Región de Los Ríos", "Región de Los Lagos", "Región de Aysén", "Región de Magallanes"]
+
 export default function SignInSide() {
 
   const navigate = useNavigate();
 
   const [signUp, setSignUp] = useState(false)
+  const [selectedRegion, setSelectedRegion] = useState("")
 
 
   const { loginUser, registerUser } = useContext(UserContext)
@@ -46,14 +49,16 @@ export default function SignInSide() {
       } else {
         await loginUser(user);
       }
+      alert("registro exitoso");
       setUser(initialValues);
       navigate("/");
     } catch (error) {
       console.error("Error durante el registro de usuario", error);
-      // Manejando el error
+      alert("registro fallido")
     }
+
   };
-  
+
 
   const changeMode = () => {
     setSignUp(!signUp)
@@ -180,7 +185,27 @@ export default function SignInSide() {
                     value={user.comune}
 
                   />
-                  <TextField
+
+
+                  <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    options={regiones}
+                    sx={{ width: 300 }}
+                    renderInput={(params) => <TextField {...params}
+                      label="Region" />}
+                    name="region"
+                    value={selectedRegion}
+                    onChange={(event, newValue) => {
+                      setSelectedRegion(newValue)
+                      setUser((prevState) => ({
+                        ...prevState,
+                        region: newValue
+                      }));
+                      console.log(newValue);
+                    }}
+                  />
+                  {/* <TextField
                     margin="normal"
                     required
                     id="region"
@@ -193,7 +218,7 @@ export default function SignInSide() {
                     label="Región"
                     value={user.region}
 
-                  />
+                  /> */}
                 </>
               )}
               <Button
